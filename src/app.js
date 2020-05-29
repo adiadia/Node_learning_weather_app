@@ -2,6 +2,8 @@ const path = require('path');
 const express = require('express');
 const hbs = require('hbs');
 
+const port = process.env.port || 3000;
+
 const pathDirectory = path.join(__dirname,'../public');
 const viewPath = path.join(__dirname,'../templates/views');
 const partialPath = path.join(__dirname,'../templates/partials');
@@ -69,6 +71,6 @@ app.get('*',(req,res)=>{
 
 
 
-app.listen(3000,()=>{
-    console.log('3000 port is working');
+app.listen(port,()=>{
+    console.log(port+' port is working');
 })
